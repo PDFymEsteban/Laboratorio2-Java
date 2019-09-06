@@ -24,11 +24,14 @@ public class Estudiante {
 
     public static void ListarAlumnos(Estudiante[] estudiantes){
         System.out.println("\n-----------------------");
-        for (int i = 0; i < estudiantes.length; i++) {
-            System.out.println("Estudiante: "+estudiantes[i].nombre
-                                +"\nNro Estudiante: "+estudiantes[i].nroEstud
-                                +"\nNota Media: "+estudiantes[i].notaMedia
-                                +"\n-----------------------");
+
+            for (int i = 0; i < estudiantes.length; i++) {
+                if (estudiantes[i].nombre != null){
+                System.out.println("Estudiante: "+estudiantes[i].nombre
+                        +"\nNro Estudiante: "+estudiantes[i].nroEstud
+                        +"\nNota Media: "+estudiantes[i].notaMedia
+                        +"\n-----------------------");
+            }
         }
     }
 
@@ -42,8 +45,7 @@ public class Estudiante {
             System.out.println("\n---------------"+
                     "\nEstudiante: "+estudiantes[i].nombre+
                     "\nNroEstud: "+estudiantes[i].nroEstud+
-                    "\nNota Media: "+estudiantes[i].notaMedia+
-                    "\n---------------\n");
+                    "\nNota Media: "+estudiantes[i].notaMedia);
         }
 
     }
@@ -58,6 +60,31 @@ public class Estudiante {
                 estudiantes[i].nroEstud = 0;
                 estudiantes[i].notaMedia = 0;
             }
+        }
+    }
+
+    public static void CambiarNota(Estudiante[] estudiantes){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Ingrese el Nombre del Alumno para cambiar la nota: ");
+        String cambiar = sc.nextLine();
+
+        for (int i = 0; i < estudiantes.length; i++) {
+            if (estudiantes[i].nombre.equals(cambiar)){
+                System.out.print("Ingrese la nueva nota: ");
+                int nuevaNota = sc.nextInt();
+                estudiantes[i].notaMedia = nuevaNota;
+                break;
+            }
+        }
+
+        for (int i = 0; i < estudiantes.length; i++) {
+
+            if (estudiantes[i].nombre.equals(cambiar));
+            System.out.println("\n---------------"+
+                    "\nEstudiante: "+estudiantes[i].nombre+
+                    "\nNroEstud: "+estudiantes[i].nroEstud+
+                    "\nNota Media: "+estudiantes[i].notaMedia);
         }
     }
 }

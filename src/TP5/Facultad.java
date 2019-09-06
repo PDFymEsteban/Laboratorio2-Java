@@ -32,8 +32,7 @@ public class Facultad {
             sc.nextLine();
             System.out.printf("Ingrese el nombre: ");
             String nombre = sc.nextLine();
-            System.out.printf("Ingrese el NroEstudiante: ");
-            int nroEst = sc.nextInt();
+            int nroEst = (int)(Math .random()*this.cantAlum);
             System.out.printf("Ingrese el promedio: ");
             float prom = sc.nextFloat();
 
